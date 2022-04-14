@@ -14,9 +14,23 @@ head, script {
 
 body {
     position: relative;
-    height: 100vh;
+    height: 97vh;
     width: 100vw;
     background-color: black;
+}
+
+#clear {
+    position: absolute;
+    bottom: 0;
+    height: 50px;
+    width: 100vw;
+    border: 1px solid white;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    font-family: monospace;
+    font-size: 2em;
+    line-height: 50px;
 }
 
 section {
@@ -29,59 +43,93 @@ section {
     border: 1px solid white;
     border-radius: 5px;
     background-color: black;
-    padding: 0px 15px;
+    padding: 15px;
 }
 
 #quadro {
-    height: 172px;
-    width: 172px;
+    height: 272px;
+    width: 272px;
     border: 1px solid white;
     background-color: white;
+    overflow: hidden;
+    font-size: 0;
 }
 
 .cor {
     height: 50px;
     width: 50px;
-    border: 1px solid white;
-    border-radius: 10px;
-    margin-top: 19px;
-    margin-bottom: 19px;
-}
-
-#r {
-    background-color: red;
-}
-
-#g {
-    background-color: green;
-}
-
-#b {
-    background-color: blue;
+    border: 1px solid black;
+    border-radius: 20px;
+    margin: 29px 0px;
 }
 
 .cor:active {
-    border: 3px solid white;
+    border: 3px solid black;
+}
+
+#r {
+    background-color: #FC6042;
+}
+
+#blocor {
+    background-color: #FC6042;
+}
+
+#g {
+    background-color: #2CC990;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+#blocog {
+    background-color: #2CC990;
+}
+
+#b {
+    background-color: #2C82C9;
+}
+
+#blocob {
+    background-color: #2C82C9;
+}
+
+#blocor, #blocog, #blocob, #blocowhite, #blocoblack {
+    width: 22.5px;
+    height: 22.5px;
+    font-size: 16px;
+}
+
+.special {
+    width: 30px;
+    height: 30px;
+    border: 1px solid white;
+    border-radius: 13px;
+    margin-bottom: 39.5px;
+    margin-top: 39.5px;
 }
 
 #black {
+    background-color: black;
+    margin-right: 10px;
+}
 
+#black:active {
+    border: 3px solid white;
 }
 
 #blocoblack {
-
+    background-color: black;
 }
 
 #white {
+    background-color: white;
+    margin-left: 10px;
+}
 
+#white:active {
+    border: 3px solid black;
 }
 
 #blocowhite {
-
-}
-
-#clear {
-    height: 50px;
-    width: 100vw;
-    border: 1px solid white;
+    background-color: white;
 }
