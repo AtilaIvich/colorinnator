@@ -3,11 +3,10 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title></title>
+        <title>Colorinnator</title>
         <link rel="stylesheet" href="style.css">
     </head>
-    <body>
-        <section><div id="quadro">
+    <body><section><div id="quadro">
 </div><div class="special" id="black">
 </div><div class="cor" id="r">
 </div><div class="cor" id="g">
@@ -16,6 +15,33 @@
 </div></section><div id="clear">
             Reset
         </div><script type="text/javascript">
+            window.bgquadro = 'white';
+
+            function clickquadro() {
+                if (bgquadro == 'white') {
+                    bgquadro = '#49E2DE';
+                    vquadro.style.backgroundColor = '#49E2DE';
+                } else if (bgquadro == '#49E2DE') {
+                    bgquadro = '#6EE214';
+                    vquadro.style.backgroundColor = '#6EE214';
+                } else if (bgquadro == '#6EE214') {
+                    bgquadro = '#F2DB00';
+                    vquadro.style.backgroundColor = '#F2DB00';
+                } else if (bgquadro == '#F2DB00') {
+                    bgquadro = '#E400F2';
+                    vquadro.style.backgroundColor = '#E400F2'; 
+                } else if (bgquadro == '#E400F2') {
+                    bgquadro = '#001CF2';
+                    vquadro.style.backgroundColor = '#001CF2';
+                } else if (bgquadro == '#001CF2') {
+                    bgquadro = '#F21072';
+                    vquadro.style.backgroundColor = '#F21072';
+                } else if (bgquadro == '#F21072') {
+                    bgquadro = 'white';
+                    vquadro.style.backgroundColor = 'white';
+                }
+            }
+
             var vquadro = document.getElementById('quadro');
             var vblack = document.getElementById('black');
             var vr = document.getElementById('r');
@@ -24,6 +50,7 @@
             var vwhite = document.getElementById('white');
             var vclear = document.getElementById('clear');
 
+            vquadro.addEventListener('click', clickquadro);
             vblack.addEventListener('click', clickblack);
             vr.addEventListener('click', clickr);
             vg.addEventListener('click', clickg);
@@ -32,22 +59,22 @@
             vclear.addEventListener('click', reset);
 
             function clickblack() {
-                vquadro.style.backgroundColor = 'white';
+                vquadro.style.backgroundColor = bgquadro;
                 vquadro.innerHTML += '<div id="blocoblack"></div>';
             }
 
             function clickr() {
-                vquadro.style.backgroundColor = 'white';
+                vquadro.style.backgroundColor = bgquadro;
                 vquadro.innerHTML += '<div id="blocor"></div>';
             }
 
             function clickg() {
-                vquadro.style.backgroundColor = 'white';
+                vquadro.style.backgroundColor = bgquadro;
                 vquadro.innerHTML += '<div id="blocog"></div>';
             }
 
             function clickb() {
-                vquadro.style.backgroundColor = 'white';
+                vquadro.style.backgroundColor = bgquadro;
                 vquadro.innerHTML += '<div id="blocob"></div>';
             }
 
@@ -82,6 +109,7 @@
             }
 
             function reset() {
+                bgquadro = 'white';
                 vquadro.style.backgroundColor = 'white';
                 vquadro.innerHTML = ' ';
             }
