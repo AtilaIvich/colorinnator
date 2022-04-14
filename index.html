@@ -29,87 +29,60 @@
             vg.addEventListener('click', clickg);
             vb.addEventListener('click', clickb);
             vwhite.addEventListener('click', clickwhite);
-            vwhite.addEventListener('mousedown', whitedown);
-            vwhite.addEventListener('mouseup', whiteup);
-            vwhite.addEventListener('touchstart', whitetouchdown);
-            vwhite.addEventListener('touchend', whitetouchup);
             vclear.addEventListener('click', reset);
 
             function clickblack() {
+                vquadro.style.backgroundColor = 'white';
                 vquadro.innerHTML += '<div id="blocoblack"></div>';
             }
 
             function clickr() {
+                vquadro.style.backgroundColor = 'white';
                 vquadro.innerHTML += '<div id="blocor"></div>';
             }
 
             function clickg() {
+                vquadro.style.backgroundColor = 'white';
                 vquadro.innerHTML += '<div id="blocog"></div>';
             }
 
             function clickb() {
+                vquadro.style.backgroundColor = 'white';
                 vquadro.innerHTML += '<div id="blocob"></div>';
-            }
-
-            function clickwhite() {
-                vquadro.innerHTML += '<div id="blocowhite"></div>';
             }
 
             corw = 0;
 
-            function whitedown() {
+            function clickwhite() {
                 if (corw == 0) {
                     corw = 1;
+                    vquadro.innerHTML += '<div id="blocowhite"></div>';
                     vquadro.style.backgroundColor = '#49E2DE';
                 } else if (corw == 1) {
                     corw = 2;
+                    vquadro.innerHTML += '<div id="blocowhite"></div>';
                     vquadro.style.backgroundColor = '#6EE214';
                 } else if (corw == 2) {
                     corw = 3;
+                    vquadro.innerHTML += '<div id="blocowhite"></div>';
                     vquadro.style.backgroundColor = '#F2DB00';
                 } else if (corw == 3) {
                     corw = 4;
+                    vquadro.innerHTML += '<div id="blocowhite"></div>';
                     vquadro.style.backgroundColor = '#E400F2';
                 } else if (corw == 4) {
                     corw =  5;
+                    vquadro.innerHTML += '<div id="blocowhite"></div>';
                     vquadro.style.backgroundColor = '#001CF2';
                 } else if (corw == 5) {
                     corw = 0;
+                    vquadro.innerHTML += '<div id="blocowhite"></div>';
                     vquadro.style.backgroundColor = '#F21072';
                 }
-            }
-
-            function whiteup() {
-                vquadro.style.backgroundColor = 'white';
-            }
-
-            function whitetouchdown() {
-                if (corw == 0) {
-                    corw = 1;
-                    vquadro.style.backgroundColor = '#49E2DE';
-                } else if (corw == 1) {
-                    corw = 2;
-                    vquadro.style.backgroundColor = '#6EE214';
-                } else if (corw == 2) {
-                    corw = 3;
-                    vquadro.style.backgroundColor = '#F2DB00';
-                } else if (corw == 3) {
-                    corw = 4;
-                    vquadro.style.backgroundColor = '#E400F2';
-                } else if (corw == 4) {
-                    corw =  5;
-                    vquadro.style.backgroundColor = '#001CF2';
-                } else if (corw == 5) {
-                    corw = 0;
-                    vquadro.style.backgroundColor = '#F21072';
-                }
-            }
-
-            function whitetouchup() {
-                vquadro.style.backgroundColor = 'white';
             }
 
             function reset() {
+                vquadro.style.backgroundColor = 'white';
                 vquadro.innerHTML = ' ';
             }
         </script>
