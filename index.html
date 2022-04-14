@@ -9,12 +9,12 @@
     <body>
         <section>
             <div id="quadro"></div>
-            <div class="special" id="black"></div>
-            <div class="cor" id="r"></div>
-            <div class="cor" id="g"></div>
-            <div class="cor" id="b"></div>
-            <div class="special" id="white"></div>
-        </section>
+            <div class="special" id="black">
+</div><div class="cor" id="r">
+</div><div class="cor" id="g">
+</div><div class="cor" id="b">
+</div><div class="special" id="white">
+</div></section>
         <div id="clear">Reset</div>
 
         <script type="text/javascript">
@@ -32,8 +32,8 @@
             vb.addEventListener('click', clickb);
             vwhite.addEventListener('mousedown', whitedown);
             vwhite.addEventListener('mouseup', whiteup);
-            vwhite.addEventListener('touchstart', whitedown);
-            vwhite.addEventListener('touchend', whiteup);
+            vwhite.addEventListener('touchstart', whitetouchdown);
+            vwhite.addEventListener('touchend', whitetouchup);
             vclear.addEventListener('click', reset);
 
             function clickblack() {
@@ -83,6 +83,38 @@
             }
 
             function whiteup() {
+                vquadro.style.backgroundColor = 'white';
+            }
+
+            function whitetouchdown() {
+                if (corw == 0) {
+                    corw = 1;
+                    vquadro.style.backgroundColor = '#49E2DE';
+                    vquadro.innerHTML += '<div id="blocowhite"></div>';
+                } else if (corw == 1) {
+                    corw = 2;
+                    vquadro.style.backgroundColor = '#6EE214';
+                    vquadro.innerHTML += '<div id="blocowhite"></div>';
+                } else if (corw == 2) {
+                    corw = 3;
+                    vquadro.style.backgroundColor = '#F2DB00';
+                    vquadro.innerHTML += '<div id="blocowhite"></div>';
+                } else if (corw == 3) {
+                    corw = 4;
+                    vquadro.style.backgroundColor = '#E400F2';
+                    vquadro.innerHTML += '<div id="blocowhite"></div>';
+                } else if (corw == 4) {
+                    corw =  5;
+                    vquadro.style.backgroundColor = '#001CF2';
+                    vquadro.innerHTML += '<div id="blocowhite"></div>';
+                } else if (corw == 5) {
+                    corw = 0;
+                    vquadro.style.backgroundColor = '#F21072';
+                    vquadro.innerHTML += '<div id="blocowhite"></div>';
+                }
+            }
+
+            function whitetouchup() {
                 vquadro.style.backgroundColor = 'white';
             }
 
