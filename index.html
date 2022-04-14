@@ -6,7 +6,7 @@
         <title>Colorinnator</title>
         <link rel="stylesheet" href="style.css">
     </head>
-    <body><section><div id="quadro">
+    <body id="bodyid"><section><div id="quadro">
 </div><div class="special" id="black">
 </div><div class="cor" id="r">
 </div><div class="cor" id="g">
@@ -15,28 +15,37 @@
 </div></section><div id="clear">
             Reset
         </div><script type="text/javascript">
-            window.bgquadro = 'white';
+            var bgquadro = 'white';
+            var vbody = document.getElementById('bodyid');
+            vbody.style.backgroundColor = 'black';
 
             function clickquadro() {
                 if (bgquadro == 'white') {
+                    vbody.style.backgroundColor = '#49E2DE';
                     bgquadro = '#49E2DE';
                     vquadro.style.backgroundColor = '#49E2DE';
                 } else if (bgquadro == '#49E2DE') {
+                    vbody.style.backgroundColor = '#6EE214';
                     bgquadro = '#6EE214';
                     vquadro.style.backgroundColor = '#6EE214';
                 } else if (bgquadro == '#6EE214') {
+                    vbody.style.backgroundColor = '#F2DB00';
                     bgquadro = '#F2DB00';
                     vquadro.style.backgroundColor = '#F2DB00';
                 } else if (bgquadro == '#F2DB00') {
+                    vbody.style.backgroundColor = '#E400F2';
                     bgquadro = '#E400F2';
                     vquadro.style.backgroundColor = '#E400F2'; 
                 } else if (bgquadro == '#E400F2') {
+                    vbody.style.backgroundColor = '#001CF2';
                     bgquadro = '#001CF2';
                     vquadro.style.backgroundColor = '#001CF2';
                 } else if (bgquadro == '#001CF2') {
+                    vbody.style.backgroundColor = '#F21072';
                     bgquadro = '#F21072';
                     vquadro.style.backgroundColor = '#F21072';
                 } else if (bgquadro == '#F21072') {
+                    vbody.style.backgroundColor = 'black';
                     bgquadro = 'white';
                     vquadro.style.backgroundColor = 'white';
                 }
@@ -109,6 +118,7 @@
             }
 
             function reset() {
+                vbody.style.backgroundColor = 'black';
                 bgquadro = 'white';
                 vquadro.style.backgroundColor = 'white';
                 vquadro.innerHTML = ' ';
