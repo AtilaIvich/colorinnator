@@ -27,10 +27,13 @@ body {
     border: 1px solid white;
     text-align: center;
     color: white;
-    font-weight: bold;
     font-family: monospace;
     font-size: 2em;
     line-height: 50px;
+}
+
+#clear:active {
+    font-weight: bold;
 }
 
 section {
