@@ -22,8 +22,8 @@
             function clickquadro() {
                 if (bgquadro == 'white') {
                     vbody.style.backgroundColor = '#011F4B'; //cor azul
-                    bgquadro = '#005B96'; //cor azul, mas mais leve
-                    vquadro.style.backgroundColor = '#005B96'; //cor azul leve
+                    bgquadro = '#2C82C9'; //cor azul, mas mais leve
+                    vquadro.style.backgroundColor = '#2C82C9'; //cor azul leve
 
                     vquadro.style.border = '1px solid white';
                     vsection.style.backgroundColor = 'black';
@@ -31,10 +31,10 @@
                     clear.style.border = '2px solid white';
                     clear.style.color = 'white';
                 } 
-                else if (bgquadro == '#005B96') { //cor azul leve
+                else if (bgquadro == '#2C82C9') { //cor azul leve
                     vbody.style.backgroundColor = '#1E453E'; //cor verde 
-                    bgquadro = '#60BC64'; //cor verde leve
-                    vquadro.style.backgroundColor = '#60BC64'; //cor verde leve
+                    bgquadro = '#2CC990'; //cor verde leve
+                    vquadro.style.backgroundColor = '#2CC990'; //cor verde leve
 
                     vquadro.style.border = '1px solid white';
                     vsection.style.backgroundColor = 'black';
@@ -42,7 +42,7 @@
                     clear.style.border = '2px solid white';
                     clear.style.color = 'white';
                 } 
-                else if (bgquadro == '#60BC64') { //cor verde leve
+                else if (bgquadro == '#2CC990') { //cor verde leve
                     vbody.style.backgroundColor = '#585229'; //cor amarelo
                     bgquadro = '#CCB200'; //cor amarelo leve
                     vquadro.style.backgroundColor = '#CCB200'; //cor amarelo leve
@@ -66,8 +66,8 @@
                 } 
                 else if (bgquadro == '#F2629C') { //cor rosa leve
                     vbody.style.backgroundColor = '#610101'; //cor vermelho
-                    bgquadro = '#D90202'; //cor vermelho leve
-                    vquadro.style.backgroundColor = '#D90202'; //cor vermelho leve
+                    bgquadro = '#FC6042'; //cor vermelho leve
+                    vquadro.style.backgroundColor = '#FC6042'; //cor vermelho leve
 
                     vquadro.style.border = '1px solid white';
                     vsection.style.backgroundColor = 'black';
@@ -75,7 +75,7 @@
                     clear.style.border = '2px solid white';
                     clear.style.color = 'white';
                 } 
-                else if (bgquadro == '#D90202') { //cor vermelho leve
+                else if (bgquadro == '#FC6042') { //cor vermelho leve
                     vbody.style.backgroundColor = 'white'; //cor branco
                     bgquadro = 'black'; //cor preto
                     vquadro.style.backgroundColor = 'black'; //cor preto
@@ -119,50 +119,132 @@
             function clickblack() {
                 vquadro.style.backgroundColor = bgquadro;
                 vquadro.innerHTML += '<div id="blocoblack"></div>';
+                if (bgquadro == 'black') {
+                    if (corw == 0) {
+                    corw = 1;
+                    vquadro.style.backgroundColor = '#49E2DE';
+                    } else if (corw == 1) {
+                        corw = 2;
+                        vquadro.style.backgroundColor = '#6EE214';
+                    } else if (corw == 2) {
+                        corw = 3;
+                        vquadro.style.backgroundColor = '#F2DB00';
+                    } else if (corw == 3) {
+                        corw = 4;
+                        vquadro.style.backgroundColor = '#E400F2';
+                    } else if (corw == 4) {
+                        corw =  5;
+                        vquadro.style.backgroundColor = '#001CF2';
+                    } else if (corw == 5) {
+                        corw = 0;
+                        vquadro.style.backgroundColor = '#F21072';
+                    }
+                }
             }
 
             function clickr() {
                 vquadro.style.backgroundColor = bgquadro;
                 vquadro.innerHTML += '<div id="blocor"></div>';
+                if (bgquadro == '#FC6042') {
+                    if (corw == 0) {
+                    corw = 1;
+                    vquadro.style.backgroundColor = '#49E2DE';
+                    } else if (corw == 1) {
+                        corw = 2;
+                        vquadro.style.backgroundColor = '#6EE214';
+                    } else if (corw == 2) {
+                        corw = 3;
+                        vquadro.style.backgroundColor = '#F2DB00';
+                    } else if (corw == 3) {
+                        corw = 4;
+                        vquadro.style.backgroundColor = '#E400F2';
+                    } else if (corw == 4) {
+                        corw =  5;
+                        vquadro.style.backgroundColor = '#001CF2';
+                    } else if (corw == 5) {
+                        corw = 0;
+                        vquadro.style.backgroundColor = '#F21072';
+                    }
+                }
             }
 
             function clickg() {
                 vquadro.style.backgroundColor = bgquadro;
                 vquadro.innerHTML += '<div id="blocog"></div>';
+                if (bgquadro == '#2CC990') {
+                    if (corw == 0) {
+                    corw = 1;
+                    vquadro.style.backgroundColor = '#49E2DE';
+                    } else if (corw == 1) {
+                        corw = 2;
+                        vquadro.style.backgroundColor = '#6EE214';
+                    } else if (corw == 2) {
+                        corw = 3;
+                        vquadro.style.backgroundColor = '#F2DB00';
+                    } else if (corw == 3) {
+                        corw = 4;
+                        vquadro.style.backgroundColor = '#E400F2';
+                    } else if (corw == 4) {
+                        corw =  5;
+                        vquadro.style.backgroundColor = '#001CF2';
+                    } else if (corw == 5) {
+                        corw = 0;
+                        vquadro.style.backgroundColor = '#F21072';
+                    }
+                }
             }
 
             function clickb() {
                 vquadro.style.backgroundColor = bgquadro;
                 vquadro.innerHTML += '<div id="blocob"></div>';
+                if (bgquadro == '#2C82C9') {
+                    if (corw == 0) {
+                    corw = 1;
+                    vquadro.style.backgroundColor = '#49E2DE';
+                    } else if (corw == 1) {
+                        corw = 2;
+                        vquadro.style.backgroundColor = '#6EE214';
+                    } else if (corw == 2) {
+                        corw = 3;
+                        vquadro.style.backgroundColor = '#F2DB00';
+                    } else if (corw == 3) {
+                        corw = 4;
+                        vquadro.style.backgroundColor = '#E400F2';
+                    } else if (corw == 4) {
+                        corw =  5;
+                        vquadro.style.backgroundColor = '#001CF2';
+                    } else if (corw == 5) {
+                        corw = 0;
+                        vquadro.style.backgroundColor = '#F21072';
+                    }
+                }
             }
 
             corw = 0;
 
             function clickwhite() {
-                if (corw == 0) {
-                    corw = 1;
-                    vquadro.innerHTML += '<div id="blocowhite"></div>';
-                    vquadro.style.backgroundColor = '#49E2DE';
-                } else if (corw == 1) {
-                    corw = 2;
-                    vquadro.innerHTML += '<div id="blocowhite"></div>';
-                    vquadro.style.backgroundColor = '#6EE214';
-                } else if (corw == 2) {
-                    corw = 3;
-                    vquadro.innerHTML += '<div id="blocowhite"></div>';
-                    vquadro.style.backgroundColor = '#F2DB00';
-                } else if (corw == 3) {
-                    corw = 4;
-                    vquadro.innerHTML += '<div id="blocowhite"></div>';
-                    vquadro.style.backgroundColor = '#E400F2';
-                } else if (corw == 4) {
-                    corw =  5;
-                    vquadro.innerHTML += '<div id="blocowhite"></div>';
-                    vquadro.style.backgroundColor = '#001CF2';
-                } else if (corw == 5) {
-                    corw = 0;
-                    vquadro.innerHTML += '<div id="blocowhite"></div>';
-                    vquadro.style.backgroundColor = '#F21072';
+                vquadro.style.backgroundColor = bgquadro;
+                vquadro.innerHTML += '<div id="blocowhite"></div>';
+                if (bgquadro == 'white') {
+                    if (corw == 0) {
+                        corw = 1;
+                        vquadro.style.backgroundColor = '#49E2DE';
+                    } else if (corw == 1) {
+                        corw = 2;
+                        vquadro.style.backgroundColor = '#6EE214';
+                    } else if (corw == 2) {
+                        corw = 3;
+                        vquadro.style.backgroundColor = '#F2DB00';
+                    } else if (corw == 3) {
+                        corw = 4;
+                        vquadro.style.backgroundColor = '#E400F2';
+                    } else if (corw == 4) {
+                        corw =  5;
+                        vquadro.style.backgroundColor = '#001CF2';
+                    } else if (corw == 5) {
+                        corw = 0;
+                        vquadro.style.backgroundColor = '#F21072';
+                    }
                 }
             }
 
