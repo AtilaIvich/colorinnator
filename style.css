@@ -117,6 +117,7 @@ section {
 
 #black {
     background-color: black;
+    margin-left: 10px;
     margin-right: 10px;
 }
 
@@ -131,6 +132,8 @@ section {
 #white {
     background-color: white;
     margin-left: 10px;
+    margin-right: 10px;
+    border: 1px solid black;
 }
 
 #white:active {

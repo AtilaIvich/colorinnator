@@ -21,36 +21,85 @@
 
             function clickquadro() {
                 if (bgquadro == 'white') {
-                    vbody.style.backgroundColor = '#49E2DE';
-                    bgquadro = '#49E2DE';
-                    vquadro.style.backgroundColor = '#49E2DE';
-                } else if (bgquadro == '#49E2DE') {
-                    vbody.style.backgroundColor = '#6EE214';
-                    bgquadro = '#6EE214';
-                    vquadro.style.backgroundColor = '#6EE214';
-                } else if (bgquadro == '#6EE214') {
-                    vbody.style.backgroundColor = '#F2DB00';
-                    bgquadro = '#F2DB00';
-                    vquadro.style.backgroundColor = '#F2DB00';
-                } else if (bgquadro == '#F2DB00') {
-                    vbody.style.backgroundColor = '#E400F2';
-                    bgquadro = '#E400F2';
-                    vquadro.style.backgroundColor = '#E400F2'; 
-                } else if (bgquadro == '#E400F2') {
-                    vbody.style.backgroundColor = '#001CF2';
-                    bgquadro = '#001CF2';
-                    vquadro.style.backgroundColor = '#001CF2';
-                } else if (bgquadro == '#001CF2') {
-                    vbody.style.backgroundColor = '#F21072';
-                    bgquadro = '#F21072';
-                    vquadro.style.backgroundColor = '#F21072';
-                } else if (bgquadro == '#F21072') {
+                    vbody.style.backgroundColor = '#011F4B'; //cor azul
+                    bgquadro = '#005B96'; //cor azul, mas mais leve
+                    vquadro.style.backgroundColor = '#005B96'; //cor azul leve
+
+                    vquadro.style.border = '1px solid white';
+                    vsection.style.backgroundColor = 'black';
+                    vsection.style.border = '3px solid white';
+                    clear.style.border = '2px solid white';
+                    clear.style.color = 'white';
+                } 
+                else if (bgquadro == '#005B96') { //cor azul leve
+                    vbody.style.backgroundColor = '#1E453E'; //cor verde 
+                    bgquadro = '#60BC64'; //cor verde leve
+                    vquadro.style.backgroundColor = '#60BC64'; //cor verde leve
+
+                    vquadro.style.border = '1px solid white';
+                    vsection.style.backgroundColor = 'black';
+                    vsection.style.border = '3px solid white';
+                    clear.style.border = '2px solid white';
+                    clear.style.color = 'white';
+                } 
+                else if (bgquadro == '#60BC64') { //cor verde leve
+                    vbody.style.backgroundColor = '#585229'; //cor amarelo
+                    bgquadro = '#CCB200'; //cor amarelo leve
+                    vquadro.style.backgroundColor = '#CCB200'; //cor amarelo leve
+
+                    vquadro.style.border = '1px solid white';
+                    vsection.style.backgroundColor = 'black';
+                    vsection.style.border = '3px solid white';
+                    clear.style.border = '2px solid white';
+                    clear.style.color = 'white';
+                } 
+                else if (bgquadro == '#CCB200') { //cor amarelo leve
+                    vbody.style.backgroundColor = '#541B3D'; //cor rosa
+                    bgquadro = '#F2629C'; //cor rosa leve
+                    vquadro.style.backgroundColor = '#F2629C'; //cor rosa leve
+
+                    vquadro.style.border = '1px solid white';
+                    vsection.style.backgroundColor = 'black';
+                    vsection.style.border = '3px solid white';
+                    clear.style.border = '2px solid white';
+                    clear.style.color = 'white';
+                } 
+                else if (bgquadro == '#F2629C') { //cor rosa leve
+                    vbody.style.backgroundColor = '#610101'; //cor vermelho
+                    bgquadro = '#D90202'; //cor vermelho leve
+                    vquadro.style.backgroundColor = '#D90202'; //cor vermelho leve
+
+                    vquadro.style.border = '1px solid white';
+                    vsection.style.backgroundColor = 'black';
+                    vsection.style.border = '3px solid white';
+                    clear.style.border = '2px solid white';
+                    clear.style.color = 'white';
+                } 
+                else if (bgquadro == '#D90202') { //cor vermelho leve
+                    vbody.style.backgroundColor = 'white'; //cor branco
+                    bgquadro = 'black'; //cor preto
+                    vquadro.style.backgroundColor = 'black'; //cor preto
+
+                    vquadro.style.border = '1px solid black';
+                    vsection.style.backgroundColor = 'white';
+                    vsection.style.border = '3px solid black';
+                    clear.style.border = '2px solid black';
+                    clear.style.color = 'black';
+                } 
+                else if (bgquadro == 'black') { //cor preto
                     vbody.style.backgroundColor = 'black';
                     bgquadro = 'white';
                     vquadro.style.backgroundColor = 'white';
+
+                    vquadro.style.border = '1px solid white';
+                    vsection.style.backgroundColor = 'black';
+                    vsection.style.border = '3px solid white';
+                    clear.style.border = '2px solid white';
+                    clear.style.color = 'white';
                 }
             }
 
+            var vsection = document.getElementsByTagName('section')[0];
             var vquadro = document.getElementById('quadro');
             var vblack = document.getElementById('black');
             var vr = document.getElementById('r');
@@ -122,6 +171,12 @@
                 bgquadro = 'white';
                 vquadro.style.backgroundColor = 'white';
                 vquadro.innerHTML = ' ';
+
+                vquadro.style.border = '1px solid white';
+                vsection.style.backgroundColor = 'black';
+                vsection.style.border = '3px solid white';
+                clear.style.border = '2px solid white';
+                clear.style.color = 'white';
             }
         </script>
     </body>
