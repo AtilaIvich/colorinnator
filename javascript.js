@@ -1,147 +1,151 @@
-var vbody = document.getElementById('bodyid');
-var vsection = document.getElementsByTagName('section')[0];
-var vquadro = document.getElementById('quadro');
-var vblack = document.getElementById('black');
-var vr = document.getElementById('r');
-var vg = document.getElementById('g');
-var vb = document.getElementById('b');
-var vwhite = document.getElementById('white');
-var vclear = document.getElementById('clear');
+var body = document.getElementsByTagName('body')[0];
+var section = document.getElementsByTagName('section')[0];
+var board = document.getElementById('board');
+var black = document.getElementById('black');
+var r = document.getElementById('r');
+var g = document.getElementById('g');
+var b = document.getElementById('b');
+var white = document.getElementById('white');
+var clear = document.getElementById('clear');
 
-vquadro.addEventListener('click', clickquadro);
-vblack.addEventListener('click', () => click(1));
-vr.addEventListener('click', () => click(2));
-vg.addEventListener('click', () => click(3));
-vb.addEventListener('click', () => click(4));
-vwhite.addEventListener('click', () => click(5));
-vclear.addEventListener('click', reset);
+board.addEventListener('click', clickboard);
+black.addEventListener('click', () => click(1));
+r.addEventListener('click', () => click(2));
+g.addEventListener('click', () => click(3));
+b.addEventListener('click', () => click(4));
+white.addEventListener('click', () => click(5));
+clear.addEventListener('click', reset);
 
-var bgquadro = 'white';
-vbody.style.backgroundColor = 'black';
+var bgboard = 'white';
+body.style.backgroundColor = 'black';
 
-function clickquadro() {
-    if (bgquadro == 'white') {
-        vbody.style.backgroundColor = '#011F4B'; //blue
-        bgquadro = '#2C82C9'; //light blue
-        vquadro.style.backgroundColor = '#2C82C9'; //light blue
+function clickboard() {
+    if (bgboard == 'white') {
+        body.style.backgroundColor = '#011F4B'; //blue
+        bgboard = '#2C82C9'; //light blue
+        board.style.backgroundColor = bgboard;
     }
-    else if (bgquadro == '#2C82C9') { //light blue
-        vbody.style.backgroundColor = '#1E453E'; //green
-        bgquadro = '#2CC990'; //light green
-        vquadro.style.backgroundColor = '#2CC990'; //light green
+    else if (bgboard == '#2C82C9') { //light blue
+        body.style.backgroundColor = '#1E453E'; //green
+        bgboard = '#2CC990'; //light green
+        board.style.backgroundColor = bgboard;
     }
-    else if (bgquadro == '#2CC990') { //light green
-        vbody.style.backgroundColor = '#585229'; //yellow
-        bgquadro = '#CCB200'; //light yellow
-        vquadro.style.backgroundColor = '#CCB200'; //light yellow
+    else if (bgboard == '#2CC990') { //light green
+        body.style.backgroundColor = '#585229'; //yellow
+        bgboard = '#CCB200'; //light yellow
+        board.style.backgroundColor = bgboard;
     }
-    else if (bgquadro == '#CCB200') { //light yellow
-        vbody.style.backgroundColor = '#541B3D'; //pink
-        bgquadro = '#F2629C'; //light pink
-        vquadro.style.backgroundColor = '#F2629C'; //light pink
+    else if (bgboard == '#CCB200') { //light yellow
+        body.style.backgroundColor = '#541B3D'; //pink
+        bgboard = '#F2629C'; //light pink
+        board.style.backgroundColor = bgboard;
     }
-    else if (bgquadro == '#F2629C') { //light pink
-        vbody.style.backgroundColor = '#610101'; //red
-        bgquadro = '#FC6042'; //light red
-        vquadro.style.backgroundColor = '#FC6042'; //light red
+    else if (bgboard == '#F2629C') { //light pink
+        body.style.backgroundColor = '#610101'; //red
+        bgboard = '#FC6042'; //light red
+        board.style.backgroundColor = bgboard;
     }
-    else if (bgquadro == '#FC6042') { //light red
-        vbody.style.backgroundColor = 'white'; //white
-        bgquadro = 'black'; //black
-        vquadro.style.backgroundColor = 'black'; //black
+    else if (bgboard == '#FC6042') { //light red
+        body.style.backgroundColor = 'white'; //white
+        bgboard = 'black'; //black
+        board.style.backgroundColor = bgboard;
 
-        vquadro.style.border = '1px solid black';
-        vsection.style.backgroundColor = 'white';
-        vsection.style.border = '3px solid black';
-        vclear.style.border = '2px solid black';
-        vclear.style.color = 'black';
+        board.style.border = '1px solid black';
+        section.style.backgroundColor = 'white';
+        section.style.border = '3px solid black';
+        clear.style.border = '2px solid black';
+        clear.style.color = 'black';
     }
-    else if (bgquadro == 'black') { //black
-        vbody.style.backgroundColor = 'black';
-        bgquadro = 'white';
-        vquadro.style.backgroundColor = 'white';
+    else if (bgboard == 'black') { //black
+        body.style.backgroundColor = 'black';
+        bgboard = 'white';
+        board.style.backgroundColor = bgboard;
 
-        vquadro.style.border = '1px solid white';
-        vsection.style.backgroundColor = 'black';
-        vsection.style.border = '3px solid white';
-        vclear.style.border = '2px solid white';
-        vclear.style.color = 'white';
+        board.style.border = '1px solid white';
+        section.style.backgroundColor = 'black';
+        section.style.border = '3px solid white';
+        clear.style.border = '2px solid white';
+        clear.style.color = 'white';
     }
 }
 
+var colorArray = [];
+
 function click(x) {
-    vquadro.style.backgroundColor = bgquadro;
+    board.style.backgroundColor = bgboard;
     switch (x) {
         case 1:
-            vquadro.innerHTML += '<div id="blocoblack"></div>';
-            if (bgquadro == 'black') {
-                randomColor();
+            colorArray.push('<div id="blockblack"></div>');
+            if (bgboard == 'black') {
+                randomBoardColor();
             }
             break
         
         case 2:
-            vquadro.innerHTML += '<div id="blocor"></div>';
-            if (bgquadro == '#FC6042') {
-                randomColor();
+            colorArray.push('<div id="blockr"></div>');
+            if (bgboard == '#FC6042') {
+                randomBoardColor();
             }
             break
         
         case 3:
-            vquadro.innerHTML += '<div id="blocog"></div>';
-            if (bgquadro == '#2CC990') {
-                randomColor();
+            colorArray.push('<div id="blockg"></div>');
+            if (bgboard == '#2CC990') {
+                randomBoardColor();
             }
             break
     
         case 4:
-            vquadro.innerHTML += '<div id="blocob"></div>';
-            if (bgquadro == '#2C82C9') {
-                randomColor();
+            colorArray.push('<div id="blockb"></div>');
+            if (bgboard == '#2C82C9') {
+                randomBoardColor();
             }
             break
 
         case 5:
-            vquadro.innerHTML += '<div id="blocowhite"></div>';
-            if (bgquadro == 'white') {
-                randomColor();
+            colorArray.push('<div id="blockwhite"></div>');
+            if (bgboard == 'white') {
+                randomBoardColor();
             }
             break
     }
+    board.innerHTML = colorArray.join('');
 }
 
 var colorR = 0;
 
-function randomColor() {
+function randomBoardColor() {
     if (colorR == 0) {
         colorR = 1;
-        vquadro.style.backgroundColor = '#49E2DE';
+        board.style.backgroundColor = '#49E2DE';
     } else if (colorR == 1) {
         colorR = 2;
-        vquadro.style.backgroundColor = '#6EE214';
+        board.style.backgroundColor = '#6EE214';
     } else if (colorR == 2) {
         colorR = 3;
-        vquadro.style.backgroundColor = '#F2DB00';
+        board.style.backgroundColor = '#F2DB00';
     } else if (colorR == 3) {
         colorR = 4;
-        vquadro.style.backgroundColor = '#E400F2';
+        board.style.backgroundColor = '#E400F2';
     } else if (colorR == 4) {
         colorR =  5;
-        vquadro.style.backgroundColor = '#001CF2';
+        board.style.backgroundColor = '#001CF2';
     } else if (colorR == 5) {
         colorR = 0;
-        vquadro.style.backgroundColor = '#F21072';
+        board.style.backgroundColor = '#F21072';
     }
 }
 
 function reset() {
-    vbody.style.backgroundColor = 'black';
-    bgquadro = 'white';
-    vquadro.style.backgroundColor = 'white';
-    vquadro.innerHTML = '';
+    body.style.backgroundColor = 'black';
+    bgboard = 'white';
+    board.style.backgroundColor = 'white';
+    board.innerHTML = '';
+    colorArray = [];
 
-    vquadro.style.border = '1px solid white';
-    vsection.style.backgroundColor = 'black';
-    vsection.style.border = '3px solid white';
-    vclear.style.border = '2px solid white';
-    vclear.style.color = 'white';
+    board.style.border = '1px solid white';
+    section.style.backgroundColor = 'black';
+    section.style.border = '3px solid white';
+    clear.style.border = '2px solid white';
+    clear.style.color = 'white';
 }
