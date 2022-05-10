@@ -7,6 +7,7 @@ var g = document.getElementById('g');
 var b = document.getElementById('b');
 var white = document.getElementById('white');
 var clear = document.getElementById('clear');
+var undo = document.getElementById('undo');
 
 board.addEventListener('click', clickboard);
 black.addEventListener('click', () => click(1));
@@ -15,8 +16,9 @@ g.addEventListener('click', () => click(3));
 b.addEventListener('click', () => click(4));
 white.addEventListener('click', () => click(5));
 clear.addEventListener('click', reset);
+undo.addEventListener('click', del);
 
-var bgboard = 'white';
+var bgboard = 'white'; //bgboard == background board
 body.style.backgroundColor = 'black';
 
 function clickboard() {
@@ -55,6 +57,8 @@ function clickboard() {
         section.style.border = '3px solid black';
         clear.style.border = '2px solid black';
         clear.style.color = 'black';
+        undo.style.border = '2px solid black';
+        undo.style.color = 'black';
     }
     else if (bgboard == 'black') { //black
         body.style.backgroundColor = 'black';
@@ -66,6 +70,8 @@ function clickboard() {
         section.style.border = '3px solid white';
         clear.style.border = '2px solid white';
         clear.style.color = 'white';
+        undo.style.border = '2px solid white';
+        undo.style.color = 'white';
     }
 }
 
@@ -77,35 +83,35 @@ function click(x) {
         case 1:
             colorArray.push('<div id="blockblack"></div>');
             if (bgboard == 'black') {
-                randomBoardColor();
+                changeBoardColor();
             }
             break
         
         case 2:
             colorArray.push('<div id="blockr"></div>');
             if (bgboard == '#FC6042') {
-                randomBoardColor();
+                changeBoardColor();
             }
             break
         
         case 3:
             colorArray.push('<div id="blockg"></div>');
             if (bgboard == '#2CC990') {
-                randomBoardColor();
+                changeBoardColor();
             }
             break
     
         case 4:
             colorArray.push('<div id="blockb"></div>');
             if (bgboard == '#2C82C9') {
-                randomBoardColor();
+                changeBoardColor();
             }
             break
 
         case 5:
             colorArray.push('<div id="blockwhite"></div>');
             if (bgboard == 'white') {
-                randomBoardColor();
+                changeBoardColor();
             }
             break
     }
@@ -114,7 +120,7 @@ function click(x) {
 
 var colorR = 0;
 
-function randomBoardColor() {
+function changeBoardColor() {
     if (colorR == 0) {
         colorR = 1;
         board.style.backgroundColor = '#49E2DE';
@@ -148,4 +154,40 @@ function reset() {
     section.style.border = '3px solid white';
     clear.style.border = '2px solid white';
     clear.style.color = 'white';
+}
+
+function del() {
+    switch(colorArray[colorArray.length - 1]) {
+        case '<div id="blockblack"></div>':
+            if (bgboard == 'black') {
+                changeBoardColor();
+            }
+            break;
+
+        case '<div id="blockr"></div>':
+            if (bgboard == '#FC6042') {
+                changeBoardColor();
+            }
+            break;
+
+        case '<div id="blockg"></div>':
+            if (bgboard == '#2CC990') {
+                changeBoardColor();
+            }
+            break;
+
+        case '<div id="blockb"></div>':
+            if (bgboard == '#2C82C9') {
+                changeBoardColor();
+            }
+            break;
+
+        case '<div id="blockwhite"></div>':
+            if (bgboard == 'white') {
+                changeBoardColor();
+            }
+            break;
+    }
+    colorArray.pop();
+    board.innerHTML = colorArray.join('');
 }

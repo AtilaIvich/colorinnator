@@ -19,25 +19,6 @@ body {
     background-color: black;
 }
 
-#clear {
-    position: absolute;
-    bottom: 0;
-    height: 50px;
-    width: 100vw;
-    border: 2px solid white;
-    text-align: center;
-    color: white;
-    font-family: monospace;
-    font-size: 2em;
-    line-height: 50px;
-    box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.6);
-    text-shadow: 0px 0px 6px rgba(0, 0, 0, 0.6);
-}
-
-#clear:active {
-    font-weight: bold;
-}
-
 section {
     position: absolute;
     top: 50%;
@@ -143,3 +124,31 @@ section {
 #blockwhite {
     background-color: white;
 }
+
+#clear, #undo {
+    position: absolute;
+    bottom: 0;
+    height: 50px;
+    width: 49vw;
+    border: 2px solid white;
+    text-align: center;
+    color: white;
+    font-family: monospace;
+    font-size: 2em;
+    line-height: 50px;
+    box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.6);
+    text-shadow: 0px 0px 6px rgba(0, 0, 0, 0.6);
+}
+
+#clear:active, #undo:active {
+    font-weight: bold;
+}
+
+#clear {
+    left: 0.5vw;
+}
+
+#undo {
+    right: 0.5vw;
+}
+
