@@ -154,6 +154,8 @@ function reset() {
     section.style.border = '3px solid white';
     clear.style.border = '2px solid white';
     clear.style.color = 'white';
+    undo.style.border = '2px solid white';
+    undo.style.color = 'white';
 }
 
 function del() {
