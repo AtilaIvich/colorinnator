@@ -1,4 +1,4 @@
 # colorinnator
-Basic coloring game.
+Basic coloring game
 
 [Click here to play](https://atilaivich.github.io/colorinnator/)
