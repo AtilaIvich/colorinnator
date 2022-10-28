@@ -18,8 +18,46 @@ white.addEventListener('click', () => click(5));
 clear.addEventListener('click', reset);
 undo.addEventListener('click', del);
 
+board.addEventListener('keypress', (e) => pressedkey(e));
+black.addEventListener('keypress', (e) => pressedkey(e));
+r.addEventListener('keypress', (e) => pressedkey(e));
+g.addEventListener('keypress', (e) => pressedkey(e));
+b.addEventListener('keypress', (e) => pressedkey(e));
+white.addEventListener('keypress', (e) => pressedkey(e));
+clear.addEventListener('keypress', (e) => pressedkey(e));
+undo.addEventListener('keypressk', (e) => pressedkey(e));
+
 var bgboard = 'white'; //bgboard == background board
 body.style.backgroundColor = 'black';
+
+function pressedkey(event) {
+    switch (event.key) {
+        case 'Enter':
+            clickboard();
+            break;
+        case '1':
+            click(1);
+            break;
+        case '2':
+            click(2);
+            break;
+        case '3':
+            click(3);
+            break;
+        case '4':
+            click(4);
+            break;
+        case '5':
+            click(5);
+            break;
+        case 'Backspace':
+            reset();
+            break;
+        case ' ':
+            del();
+            break;
+    }
+}
 
 function clickboard() {
     if (bgboard == 'white') {
