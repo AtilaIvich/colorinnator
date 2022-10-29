@@ -19,7 +19,7 @@ body {
     background-color: black;
 }
 
-section {
+#gamepad {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -34,7 +34,7 @@ section {
     font-size: 0;
 }
 
-#board {
+#frame {
     height: 272px;
     width: 272px;
     border: 1px solid white;
@@ -55,36 +55,35 @@ section {
     border: 3px solid black;
 }
 
-#r {
+#redBtn {
     background-color: #FC6042;
 }
 
-#blockr {
+#redBlock {
     background-color: #FC6042;
 }
 
-#g {
+#greenBtn {
     background-color: #2CC990;
     margin-left: 10px;
     margin-right: 10px;
 }
 
-#blockg {
+#greenBlock {
     background-color: #2CC990;
 }
 
-#b {
+#blueBtn {
     background-color: #2C82C9;
 }
 
-#blockb {
+#blueBlock {
     background-color: #2C82C9;
 }
 
-#blockr, #blockg, #blockb, #blockwhite, #blockblack {
+#redBlock, #greenBlock, #blueBlock, #whiteBlock, #blackBlock {
     width: 22.5px;
     height: 22.5px;
-    font-size: 16px;
 }
 
 .special {
@@ -95,37 +94,37 @@ section {
     margin-top: 39.5px;
 }
 
-#black {
+#blackBtn {
     background-color: black;
     margin-left: 10px;
     margin-right: 10px;
     border: 1px solid white;
 }
 
-#black:active {
+#blackBtn:active {
     border: 3px solid white;
 }
 
-#blockblack {
+#blackBlock {
     background-color: black;
 }
 
-#white {
+#whiteBtn {
     background-color: white;
     margin-left: 10px;
     margin-right: 10px;
     border: 1px solid black;
 }
 
-#white:active {
+#whiteBtn:active {
     border: 3px solid black;
 }
 
-#blockwhite {
+#whiteBlock {
     background-color: white;
 }
 
-#clear, #undo {
+#clearBtn, #undoBtn {
     position: absolute;
     bottom: 0;
     height: 50px;
@@ -142,15 +141,15 @@ section {
     user-select: none;
 }
 
-#clear:active, #undo:active {
+#clearBtn:active, #undoBtn:active {
     font-weight: bold;
     border: 3px solid white;
 }
 
-#clear {
+#clearBtn {
     left: 0.5vw;
 }
 
-#undo {
+#undoBtn {
     right: 0.5vw;
 }

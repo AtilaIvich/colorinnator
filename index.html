@@ -5,20 +5,19 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Colorinnator</title>
         <link rel="stylesheet" href="style.css">
+        <script src="javascript.js" defer></script>
     </head>
     <body>
-        <section>
-            <div id="board"></div>
-            <div class="special" id="black"></div>
-            <div class="color" id="r"></div>
-            <div class="color" id="g"></div>
-            <div class="color" id="b"></div>
-            <div class="special" id="white"></div>
+        <section id="gamepad">
+            <div id="frame"></div>
+            <div class="special" id="blackBtn"></div>
+            <div class="color" id="redBtn"></div>
+            <div class="color" id="greenBtn"></div>
+            <div class="color" id="blueBtn"></div>
+            <div class="special" id="whiteBtn"></div>
         </section>
-        <div id="clear">Reset</div>
-        <div id="undo">Delete</div>
-        
-        <script src="javascript.js">
-        </script>
+
+        <div id="clearBtn">Reset</div>
+        <div id="undoBtn">Undo</div>
     </body>
 </html>
