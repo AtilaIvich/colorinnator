@@ -8,12 +8,12 @@ const greenBtn = document.getElementById('greenBtn');
 const blueBtn = document.getElementById('blueBtn');
 const whiteBtn = document.getElementById('whiteBtn');
 
-const clearBtn = document.getElementById('clearBtn');
 const undoBtn = document.getElementById('undoBtn');
+const clearBtn = document.getElementById('clearBtn');
 
 frame.addEventListener('click', changeTheme);
-clearBtn.addEventListener('click', reset);
 undoBtn.addEventListener('click', del);
+clearBtn.addEventListener('click', reset);
 
 blackBtn.addEventListener('click', () => addBlock('black'));
 redBtn.addEventListener('click', () => addBlock('red'));
@@ -24,37 +24,36 @@ document.addEventListener('keydown', (e) => handleKeydown(e));
 
 const themes = {
     white: {
-        primaryColor: 'white',
-        secondaryColor: 'black'
+        frameColor: 'black',
+        bodyColor: 'white'
     },
     black: {
-        primaryColor: 'black',
-        secondaryColor: 'white'
+        frameColor: 'white',
+        bodyColor: 'black'
     },
     red: {
-        primaryColor: '#610101',
-        secondaryColor: '#FC6042'
+        frameColor: '#FC6042',
+        bodyColor: '#610101'
     },
     green: {
-        primaryColor: '#1E453E',
-        secondaryColor: '#2CC990'
+        frameColor: '#2CC990',
+        bodyColor: '#1E453E'
     },
     blue: {
-        primaryColor: '#011F4B',
-        secondaryColor: '#2C82C9'
+        frameColor: '#2C82C9',
+        bodyColor: '#011F4B'
     },
     pink: {
-        primaryColor: '#541B3D',
-        secondaryColor: '#F2629C'
+        frameColor: '#F2629C',
+        bodyColor: '#541B3D'
     },
     yellow: {
-        primaryColor: '#585229',
-        secondaryColor: '#CCB200'
+        frameColor: '#CCB200',
+        bodyColor: '#585229'
     }
 }
 
 let theme = 'black';
-const opposite = theme === 'white'? 'black' : 'white';
 
 function changeTheme() {
     theme = {
@@ -67,87 +66,92 @@ function changeTheme() {
         yellow: 'white'
     }[theme];
 
-    body.style.backgroundColor = themes[theme].primaryColor;
-    frame.style.backgroundColor = themes[theme].secondaryColor;
+    body.style.backgroundColor = themes[theme].bodyColor;
+    frame.style.backgroundColor = themes[theme].frameColor;
 
-    if (theme === 'white') {
-        gamepad.style.backgroundColor = 'white';
-        gamepad.style.border = `3px solid black`;
-        frame.style.border = `1px solid black`;
-        clearBtn.style.border = `2px solid black`;
-        clearBtn.style.color = `black`;
-        undoBtn.style.border = `2px solid black`;
-        undoBtn.style.color = `black`;
-    }
-    else if (theme === 'black') {
-        gamepad.style.backgroundColor = 'black';
-        gamepad.style.border = `3px solid white`;
-        frame.style.border = `1px solid white`;
-        clearBtn.style.border = `2px solid white`;
-        clearBtn.style.color = `white`;
-        undoBtn.style.border = `2px solid white`;
-        undoBtn.style.color = `white`;
+    if (theme === 'black' || theme === 'white') {
+        gamepad.style.backgroundColor = theme;
+        gamepad.style.border = `3px solid ${themes[theme].frameColor}`;
+
+        frame.style.border = `1px solid ${themes[theme].frameColor}`;
+
+        undoBtn.style.border = `2px solid ${themes[theme].frameColor}`;
+        undoBtn.style.color = `${themes[theme].frameColor}`;
+
+        clearBtn.style.border = `2px solid ${themes[theme].frameColor}`;
+        clearBtn.style.color = `${themes[theme].frameColor}`;
     }
 }
 
-let frameColor = 0;
+let frameColorIndex = 0;
 
 function changeFrameColor() {
-    frameColor++;
-    if (frameColor === 6) frameColor = 0;
+    frameColorIndex++;
+    if (frameColorIndex === 6) frameColorIndex = 0;
 
-    frame.style.backgroundColor = ['#49E2DE', '#6EE214', '#F2DB00', '#E400F2', '#001CF2', '#F21072'][frameColor];
+    frame.style.backgroundColor = ['#49E2DE', '#6EE214', '#F2DB00', '#E400F2', '#001CF2', '#F21072'][frameColorIndex];
 }
 
 let blockArray = [];
 
-function addBlock(block) {
-    frame.style.backgroundColor = themes[theme].secondaryColor;
+function addBlock(blockColor) {
+    frame.style.backgroundColor = themes[theme].frameColor;
+
+    if (blockArray.length === 144) return 'Full frame';
 
     if (theme === 'black' || theme === 'white') {
-        if (opposite === block) changeFrameColor();
+        if (blockColor === themes[theme].frameColor) changeFrameColor();
     }
-    else if (theme === block) changeFrameColor();
+    else if (blockColor === theme) changeFrameColor();
 
-    blockArray.push(`<div id="${block}Block"></div>`);
+    blockArray.push(`<div id="${blockColor}Block"></div>`);
     frame.innerHTML = blockArray.join('');
 }
 
-function reset() {
-    frame.innerHTML = '';
-    blockArray = [];
-}
-
 function del() {
-    if (blockArray.length === 0) return 'Empty frame.';
+    frame.style.backgroundColor = themes[theme].frameColor;
+
+    if (blockArray.length === 0) return 'Empty frame';
 
     if (theme === 'black' || theme === 'white') {
-        if (blockArray.pop().includes(opposite)) changeFrameColor();
+        if (blockArray.pop().includes(themes[theme].frameColor)) changeFrameColor();
     }
-    else {
-        if (blockArray.pop().includes(theme)) changeFrameColor();
-    }
+    else if (blockArray.pop().includes(theme)) changeFrameColor();
     
     frame.innerHTML = blockArray.join('');
 }
 
+function reset() {
+    frame.style.backgroundColor = themes[theme].frameColor;
+    frame.innerHTML = '';
+    blockArray = [];
+}
+
 function handleKeydown(event) {
     switch (event.key) {
-        case 'Enter': changeTheme();
-        break;
-        case '1': addBlock('black');
-        break;
-        case '2': addBlock('red')
-        break;
-        case '3': addBlock('green')
-        break;
-        case '4': addBlock('blue')
-        break;
-        case '5': addBlock('white')
-        break;
-        case 'Backspace': reset();
-        break;
-        case ' ': del();
-        break;
+        case 'Enter':
+            changeTheme();
+            break;
+        case '1':
+            addBlock('black');
+            break;
+        case '2':
+            addBlock('red');
+            break;
+        case '3':
+            addBlock('green');
+            break;
+        case '4':
+            addBlock('blue')
+            break;
+        case '5':
+            addBlock('white');
+            break;
+        case 'Backspace':
+            reset();
+            break;
+        case ' ':
+            del();
+            break;
     }
 }
