@@ -86,8 +86,7 @@ function changeTheme() {
 let frameColorIndex = 0;
 
 function changeFrameColor() {
-    frameColorIndex++;
-    if (frameColorIndex === 6) frameColorIndex = 0;
+    if (++frameColorIndex === 6) frameColorIndex = 0;
 
     frame.style.backgroundColor = ['#49E2DE', '#6EE214', '#F2DB00', '#E400F2', '#001CF2', '#F21072'][frameColorIndex];
 }
@@ -129,7 +128,7 @@ function reset() {
 
 function handleKeydown(event) {
     switch (event.key) {
-        case 'Enter':
+        case ' ':
             changeTheme();
             break;
         case '1':
@@ -148,10 +147,10 @@ function handleKeydown(event) {
             addBlock('white');
             break;
         case 'Backspace':
-            reset();
+            del()
             break;
-        case ' ':
-            del();
+        case 'Escape':
+            reset();
             break;
     }
 }
